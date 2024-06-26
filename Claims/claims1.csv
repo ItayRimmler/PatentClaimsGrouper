@@ -1,0 +1,24 @@
+Patent,Claim
+2,"A Method for a Media Gateway in connection to a backbone, comprising the steps of measuring a packet loss or a jitter associated with said backbone, receiving a call when the measured packet loss exceeds a predefined packet loss threshold or when the measured jitter exceeds a pre defined jitter threshold for said backbone"
+2,"detecting an indication associated with the call, wherein the indication is based on a time period associated with the predefined packet loss threshold or the predefined jitter threshold"
+2,indication associated with the call indicates that the measured packet loss exceeding the predefined packet loss threshold or the measured jitter exceeding the predefined jitter threshold is acceptable for the call for said time period.
+2,"adjusting the Quality of Service (QoS) level for said call when deciding said call is admitted via a backbone, comprising the steps of measuring a packet loss or a jitter associated with it, receiving a call when the measured packet loss exceeds a predefined packet loss threshold or when the measured jitter exceeds a pre defined jitter threshold"
+2,"based at least partially on the measured packet loss or the measured jitter and an indication associated with the call associated with the call, deciding whether said call is admitted to be routed via a backbone, comprising the steps of measuring a packet loss or a jitter associated with it, receiving a call when the measured packet loss exceeds a predefined packet loss threshold or when the measured jitter exceeds a pre defined jitter threshold"
+2,indication associated with the call is received from an external source such as a Mobile Switching Centre Server.
+2,"A Method for a Media Gateway in connection to a backbone, comprising the steps of measuring a packet loss or a jitter associated with said backbone, receiving a call when the measured packet loss exceeds a predefined packet loss threshold or when the measured jitter exceeds a pre defined jitter threshold for said backbone , wherein indication associated with the call is received from an external source such as a Mobile Switching Centre Server."
+2,"A Method for a Media Gateway in connection to a backbone, comprising the steps of measuring a packet loss or a jitter associated with said backbone, receiving a call when the measured packet loss exceeds a predefined packet loss threshold or when the measured jitter exceeds a pre defined jitter threshold for said backbone wherein said indication is received in a Gateway Control Protocol (GCP) message."
+2,"A Method for a Media Gateway in connection to a backbone, comprising the steps of measuring a packet loss or a jitter associated with said backbone, receiving a call when the measured packet loss exceeds a predefined packet loss threshold or when the measured jitter exceeds a pre defined jitter threshold for said backbone , wherein said indication associated with the call is a priority value within the Gateway Control Protocol message."
+1,comprising a handset
+1,comprising an on\off-hook switch
+1,comprising a wireless communications module for establishing first and second cellular telephone calls via a base station
+1,comprising means for generating an explicit call transfer command for sending to the base station in response to activation of the on-hook switch when the first and second wireless calls are established through the apparatus
+1,"comprising a body having a cradle for the handset , wherein the on\off-hook switch operates in response to placing the handset in the cradle"
+1,comprising call receiving means for receiving a first call from a calling party
+ignore,backbone
+ignore,"a backbone, comprising the steps of measuring a packet loss or a jitter associated with it, receiving a call when the measured packet loss exceeds a predefined packet loss threshold or when the measured jitter exceeds a pre defined jitter threshold"
+ignore,indication
+ignore,indication associated with the call
+ignore,method
+ignore,"A Method for a Media Gateway in connection to a backbone, comprising the steps of measuring a packet loss or a jitter associated with said backbone, receiving a call when the measured packet loss exceeds a predefined packet loss threshold or when the measured jitter exceeds a pre defined jitter threshold for said backbone"
+ignore,gcp
+ignore,Gateway Control Protocol
