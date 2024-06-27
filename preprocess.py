@@ -1,34 +1,42 @@
+import pandas as pd
+
+
 def clean(text):
-    text = text[1]
-    import string
-    text = text.translate(str.maketrans('', '', string.punctuation))
-    text = text.lower()
+    temp = text['Claim']
+    # It seems as if lowcasing the text is enough...
+    #import string
+    #temp = temp.translate(str.maketrans('', '', string.punctuation))
+    temp = temp.lower()
+    text['Claim'] = temp
     return text
 
 def split(text):
-    text = text[1]
+    temp = text['Claim']
     from nltk.tokenize import word_tokenize
-    text = word_tokenize(text)
+    temp = word_tokenize(temp)
+    text['Claim'] = temp
     return text
 
 def stop_words(text):
     from nltk.corpus import stopwords
-    if text[0] == '1':
-        stop_words = set(stopwords.words('english'))
-    elif text[0] == '2':
-        stop_words = set(stopwords.words('english'))
-    elif text[0] == '3':
+    if text['Patent'] == '1':
+        stop_words = set(stopwords.words('english')).union({'comprising', 'means'})
+    elif text['Patent'] == '2':
+        stop_words = set(stopwords.words('english')).union({'said'})
+    elif text['Patent'] == '3':
         stop_words = set(stopwords.words('english'))
     else:
         stop_words = set(stopwords.words('english'))
-    text = text[1]
-    text = [word for word in text if word not in stop_words]
+    temp = text['Claim']
+    temp = [word for word in temp if word not in stop_words]
+    text['Claim'] = temp
     return text
 
 def lemmatize(text):
-    text = text[1]
+    temp = text['Claim']
     from nltk.stem import WordNetLemmatizer
     lemmatizer = WordNetLemmatizer()
-    text = [lemmatizer.lemmatize(word) for word in text]
+    temp = [lemmatizer.lemmatize(word) for word in temp]
+    text['Claim'] = temp
     return text
 
