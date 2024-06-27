@@ -2,7 +2,7 @@
 # Itay Rimmler
 # itay.rimmler@gmail.com
 # +972-50-331-4515
-# Version 1.0
+# Version 1.1
 ###################################################################################
 
 
@@ -32,21 +32,19 @@ claims = pd.read_csv("Claims/claims1.csv")
 # Getting rid of irrelevant rows that I marked as such...
 claims = claims.drop(claims[claims['Patent'] == 'ignore'].index)
 
+# We're importing all the preprocessing functions
+from preprocess import *
+
+# Preprocessing the claims row by row...
+for i in range(claims.shape[0]):
+    claims.iloc[i, :] = split(clean(claims.iloc[i, :]))
+
 # Turning the claims from the relevant rows to a list...
-claims = list(claims.iloc[:, 1])
+claims = list(claims['Claim'])
 
-# Using the model on each claim...
-docs = [nlp(claim) for claim in claims]
-
-# Printing results...
-for doc in docs:
-    print(f"OG text: {doc.text}")
-    print(f"Coreference clusters: {doc._.coref_clusters}\n")
-
-# Impressive. Let's see what happens if all the claims are in one sentence...
-all_claims = " ".join(claims)
-doc = nlp(all_claims)
+# Joining the claims and using the model on them...
+claims = " ".join([" ".join(claim) for claim in claims])
+docs = nlp(claims)
 
 # Printing results...
-print(f"Original Text: {doc.text}")
-print(f"Coreference Clusters: {doc._.coref_clusters}")
+print(f"Coreference clusters: {docs._.coref_clusters}")
